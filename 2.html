@@ -1,0 +1,391 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<meta charset="utf-8" />
+</head>
+
+<body style="margin: 0;">
+
+<div id="jpedal" style="overflow: hidden; position:relative; width: 935px; height: 1210px;">
+
+<!-- Begin shared CSS values -->
+<style type="text/css" >
+.t {
+	position: absolute;
+	-webkit-transform-origin: top left;
+	-moz-transform-origin: top left;
+	-o-transform-origin: top left;
+	-ms-transform-origin: top left;
+	-webkit-transform: scale(0.25);
+	-moz-transform: scale(0.25);
+	-o-transform: scale(0.25);
+	-ms-transform: scale(0.25);
+	z-index: 2;
+	position:absolute;
+	white-space:nowrap;
+	overflow:visible;
+}
+</style>
+<!-- End shared CSS values -->
+
+<!-- Begin shared JS -->
+<script type="text/javascript">
+
+// Ensure that we're not replacing any onload events
+function addLoadEvent(func) {
+	var oldonload = window.onload;
+	if (typeof window.onload != 'function') {
+		window.onload = func;
+	} else {
+		window.onload = function() {
+			if (oldonload) {
+				oldonload();
+			}
+			func();
+		}
+	}
+}
+addLoadEvent(function(){load2();});
+
+function adjustWordSpacing(widths) {
+    var i, allLinesDone = false;
+    var isDone = [];
+    var currentSpacing = [];
+    var elements = [];
+    
+    // Initialise arrays
+    for (i = 0; i < widths.length; i++) {
+        elements[i] = document.getElementById(widths[i][0]);
+        elements[i].style.wordSpacing = '0px';//Required if rerunning
+    }
+    for (i = 0; i < widths.length; i++) {
+        if (isIE) widths[i][1] = widths[i][1] * 4;
+        currentSpacing[i] = Math.floor((widths[i][1] - elements[i].offsetWidth) / elements[i].innerHTML.match(/\s.|&nbsp;./g).length);//min
+        if (isIE) currentSpacing[i] = Math.floor(currentSpacing[i] / 4);
+        isDone[i] = false;
+    }
+    
+    while (!allLinesDone) {
+        // Add each adjustment to the render queue without forcing a render
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i]) {
+                elements[i].style.wordSpacing = currentSpacing[i] + 'px';
+            }            
+        }
+        
+        allLinesDone = true;
+        // If elements still need to be wider, add 1 to the word spacing
+        for (i = 0; i < widths.length; i++) {
+            if (!isDone[i] && currentSpacing[i] < 160) {
+                if (elements[i].offsetWidth >= widths[i][1]) {
+                    isDone[i] = true;
+                } else {
+                    currentSpacing[i]++;
+                    allLinesDone = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < widths.length; i++) {
+        elements[i].style.wordSpacing = (currentSpacing[i] - 1) + 'px';
+    }
+}
+
+</script>
+<!-- End shared JS -->
+
+
+<!-- Begin inline CSS -->
+<style type="text/css" >
+
+#t1_2{left:105px;top:1140px;}
+#t2_2{left:201px;top:1140px;}
+#t3_2{left:329px;top:1140px;}
+#t4_2{left:392px;top:1140px;}
+#t5_2{left:556px;top:1140px;}
+#t6_2{left:599px;top:1140px;}
+#t7_2{left:459px;top:1178px;}
+#t8_2{left:87px;top:73px;}
+#t9_2{left:114px;top:95px;}
+#ta_2{left:142px;top:95px;}
+#tb_2{left:214px;top:95px;}
+#tc_2{left:197px;top:117px;}
+#td_2{left:259px;top:117px;}
+#te_2{left:197px;top:136px;}
+#tf_2{left:233px;top:136px;}
+#tg_2{left:197px;top:155px;}
+#th_2{left:317px;top:155px;}
+#ti_2{left:197px;top:174px;}
+#tj_2{left:297px;top:174px;}
+#tk_2{left:197px;top:193px;}
+#tl_2{left:197px;top:212px;}
+#tm_2{left:197px;top:231px;}
+#tn_2{left:345px;top:231px;}
+#to_2{left:197px;top:250px;}
+#tp_2{left:197px;top:268px;}
+#tq_2{left:197px;top:287px;}
+#tr_2{left:360px;top:287px;}
+#ts_2{left:114px;top:328px;}
+#tt_2{left:142px;top:328px;}
+#tu_2{left:214px;top:328px;}
+#tv_2{left:197px;top:350px;}
+#tw_2{left:259px;top:350px;}
+#tx_2{left:197px;top:369px;}
+#ty_2{left:233px;top:369px;}
+#tz_2{left:197px;top:389px;}
+#t10_2{left:317px;top:389px;}
+#t11_2{left:197px;top:408px;}
+#t12_2{left:297px;top:408px;}
+#t13_2{left:197px;top:427px;}
+#t14_2{left:197px;top:445px;}
+#t15_2{left:197px;top:464px;}
+#t16_2{left:345px;top:464px;}
+#t17_2{left:197px;top:483px;}
+#t18_2{left:197px;top:502px;}
+#t19_2{left:360px;top:502px;}
+#t1a_2{left:114px;top:544px;}
+#t1b_2{left:142px;top:544px;}
+#t1c_2{left:209px;top:544px;}
+#t1d_2{left:197px;top:565px;}
+#t1e_2{left:259px;top:565px;}
+#t1f_2{left:197px;top:585px;}
+#t1g_2{left:233px;top:585px;}
+#t1h_2{left:197px;top:604px;}
+#t1i_2{left:317px;top:604px;}
+#t1j_2{left:197px;top:623px;}
+#t1k_2{left:297px;top:623px;}
+#t1l_2{left:197px;top:642px;}
+#t1m_2{left:197px;top:661px;}
+#t1n_2{left:345px;top:661px;}
+#t1o_2{left:197px;top:680px;}
+#t1p_2{left:197px;top:699px;}
+#t1q_2{left:360px;top:699px;}
+#t1r_2{left:114px;top:740px;}
+#t1s_2{left:142px;top:740px;}
+#t1t_2{left:214px;top:740px;}
+#t1u_2{left:197px;top:762px;}
+#t1v_2{left:259px;top:762px;}
+#t1w_2{left:197px;top:781px;}
+#t1x_2{left:233px;top:781px;}
+#t1y_2{left:197px;top:800px;}
+#t1z_2{left:317px;top:800px;}
+#t20_2{left:197px;top:819px;}
+#t21_2{left:197px;top:838px;}
+#t22_2{left:197px;top:857px;}
+#t23_2{left:297px;top:857px;}
+#t24_2{left:197px;top:876px;}
+#t25_2{left:197px;top:895px;}
+#t26_2{left:345px;top:895px;}
+#t27_2{left:197px;top:913px;}
+#t28_2{left:197px;top:932px;}
+#t29_2{left:360px;top:932px;}
+#t2a_2{left:197px;top:951px;}
+
+.s7_2{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Calibri-Bold2;
+	color: rgb(0,0,0);
+}
+
+.s1_2{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-Calibri-Bold2;
+	color: rgb(0,0,0);
+}
+
+.s5_2{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: Symbol2;
+	color: rgb(0,0,0);
+}
+
+.s4_2{
+	FONT-SIZE: 67px;
+	FONT-FAMILY: ABCDEE-Calibri-Bold2;
+	color: rgb(227,108,10);
+}
+
+.s8_2{
+	FONT-SIZE: 55px;
+	FONT-FAMILY: ABCDEE-Consolas2;
+	color: rgb(0,0,0);
+}
+
+.s2_2{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-Calibri2;
+	color: rgb(0,0,0);
+}
+
+.s3_2{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-Calibri2;
+	color: rgb(0,0,255);
+}
+
+.s6_2{
+	FONT-SIZE: 61px;
+	FONT-FAMILY: ABCDEE-Consolas2;
+	color: rgb(0,0,0);
+}
+
+#form2_1{	border-style:none;	z-index:2;	position: absolute;	left:594px;	top:1140px;	width:237px;	height:22px;	text-align:left;	background: transparent;	font:normal 16px Arial, Helvetica, sans-serif;}
+
+</style>
+<!-- End inline CSS -->
+
+<!-- Begin embedded font definitions -->
+<style id="fonts2" type="text/css" >
+
+@font-face {
+	font-family: ABCDEE-Calibri2;
+	src :url("2/fonts/ABCDEE-Calibri.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Consolas2;
+	src :url("2/fonts/ABCDEE-Consolas.woff") format("woff");
+}
+
+@font-face {
+	font-family: ABCDEE-Calibri-Bold2;
+	src :url("2/fonts/ABCDEE-Calibri-Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: Symbol2;
+	src :url("2/fonts/Symbol.woff") format("woff");
+}
+
+</style>
+<!-- End embedded font definitions -->
+
+<!-- Begin text definitions (Positioned/styled in CSS) -->
+<div id="t1_2" class="t s1_2">Mobile phone:</div>
+<div id="t2_2" class="t s2_2">+38 067 92 62 642 | </div>
+<div id="t3_2" class="t s1_2">Skype ID:</div>
+<div id="t4_2" class="t s2_2">ivan.starodubtsev.skype | </div>
+<div id="t5_2" class="t s1_2">Email:</div>
+<div id="t6_2" class="t s3_2">ivan.starodubtsev.name@gmail.com</div>
+<div id="t7_2" class="t s2_2">2</div>
+<div id="t8_2" class="t s4_2">Professional Experience Summary</div>
+<div id="t9_2" class="t s5_2"></div>
+<div id="ta_2" class="t s1_2">Company:</div>
+<div id="tb_2" class="t s6_2">LLC “EchoStar Ukraine”, Ukraine, Kharkiv, 63 Kolomens’ka str. </div>
+<div id="tc_2" class="t s7_2">Duration:</div>
+<div id="td_2" class="t s8_2">July 2013 – Present </div>
+<div id="te_2" class="t s7_2">Role:</div>
+<div id="tf_2" class="t s8_2">Software Engineer </div>
+<div id="tg_2" class="t s7_2">Project Description:</div>
+<div id="th_2" class="t s8_2">Set-top boxes user applications, System applications </div>
+<div id="ti_2" class="t s7_2">Responsibilities:</div>
+<div id="tj_2" class="t s8_2">Applications development, Build system development, Code review, </div>
+<div id="tk_2" class="t s8_2">Bugs/Issues fixing, Unit testing and test cases development, Project documentations </div>
+<div id="tl_2" class="t s8_2">development, Project specific tools development, Profiling of applications </div>
+<div id="tm_2" class="t s7_2">Technologies (common):</div>
+<div id="tn_2" class="t s8_2">C/C++, GNU/Linux, ARM, MIPS, GCC, GDB, Valgrind, Bootloaders, </div>
+<div id="to_2" class="t s8_2">Command line interface, make build systems, shell scripting, Unit testing, Software </div>
+<div id="tp_2" class="t s8_2">security/encryption aspects, TCP/IP and UDP network protocols, Gtk+, Cairo library. </div>
+<div id="tq_2" class="t s7_2">Technologies (proprietary):</div>
+<div id="tr_2" class="t s8_2">Broadcom SDK (Nexus) </div>
+<div id="ts_2" class="t s5_2"></div>
+<div id="tt_2" class="t s1_2">Company:</div>
+<div id="tu_2" class="t s6_2">GlobalLogic, Ukraine, Lviv, 26 Sheptytskykh str. </div>
+<div id="tv_2" class="t s7_2">Duration:</div>
+<div id="tw_2" class="t s8_2">December 2012 – June 2013 </div>
+<div id="tx_2" class="t s7_2">Role:</div>
+<div id="ty_2" class="t s8_2">Software Engineer </div>
+<div id="tz_2" class="t s7_2">Project Description:</div>
+<div id="t10_2" class="t s8_2">Board support package (BSP) </div>
+<div id="t11_2" class="t s7_2">Responsibilities:</div>
+<div id="t12_2" class="t s8_2">Device drivers development, Build system development, Code review, </div>
+<div id="t13_2" class="t s8_2">Bugs/Issues fixing, Project specific tools development, Project documentations </div>
+<div id="t14_2" class="t s8_2">development </div>
+<div id="t15_2" class="t s7_2">Technologies (common):</div>
+<div id="t16_2" class="t s8_2">C, VxWorks, ARM, GCC, Bootloaders, make build systems, shell </div>
+<div id="t17_2" class="t s8_2">scripting </div>
+<div id="t18_2" class="t s7_2">Technologies (proprietary):</div>
+<div id="t19_2" class="t s8_2">WindRiver workbench environment </div>
+<div id="t1a_2" class="t s5_2"></div>
+<div id="t1b_2" class="t s1_2">Company:</div>
+<div id="t1c_2" class="t s6_2">LLC “EchoStar Ukraine”, Ukraine, Kharkiv, 63 Kolomens’ka str.</div>
+<div id="t1d_2" class="t s7_2">Duration:</div>
+<div id="t1e_2" class="t s8_2">November 2011 – November 2012 </div>
+<div id="t1f_2" class="t s7_2">Role:</div>
+<div id="t1g_2" class="t s8_2">Software Engineer </div>
+<div id="t1h_2" class="t s7_2">Project Description:</div>
+<div id="t1i_2" class="t s8_2">Set-top boxes automated test system applications, System applications </div>
+<div id="t1j_2" class="t s7_2">Responsibilities:</div>
+<div id="t1k_2" class="t s8_2">Applications development, Build system development, Code review, </div>
+<div id="t1l_2" class="t s8_2">Bugs/Issues fixing, Project documentations development </div>
+<div id="t1m_2" class="t s7_2">Technologies (common):</div>
+<div id="t1n_2" class="t s8_2">C/C++, GNU/Linux, ARM, MIPS, GCC, GDB, Bootloaders, Command line </div>
+<div id="t1o_2" class="t s8_2">interface, make build systems, shell scripting </div>
+<div id="t1p_2" class="t s7_2">Technologies (proprietary):</div>
+<div id="t1q_2" class="t s8_2">Broadcom SDK (Nexus) </div>
+<div id="t1r_2" class="t s5_2"></div>
+<div id="t1s_2" class="t s1_2">Company:</div>
+<div id="t1t_2" class="t s6_2">PJSC SRPA “Impulse”, Ukraine, Luhansk region, Severodonetsk, Pobedy sq. 2</div>
+<div id="t1u_2" class="t s7_2">Duration:</div>
+<div id="t1v_2" class="t s8_2">April 2010 – October 2011 </div>
+<div id="t1w_2" class="t s7_2">Role:</div>
+<div id="t1x_2" class="t s8_2">Software Engineer </div>
+<div id="t1y_2" class="t s7_2">Project Description:</div>
+<div id="t1z_2" class="t s8_2">Instrumentation &amp; control (I&amp;C) systems for automation of large </div>
+<div id="t20_2" class="t s8_2">industrial facilities (nuclear/heat power plants, railway transportation automated </div>
+<div id="t21_2" class="t s8_2">management centers &amp; systems) </div>
+<div id="t22_2" class="t s7_2">Responsibilities:</div>
+<div id="t23_2" class="t s8_2">Instrumentation &amp; control (I&amp;C) systems software development, Project </div>
+<div id="t24_2" class="t s8_2">documentations development, Product functional testing </div>
+<div id="t25_2" class="t s7_2">Technologies (common):</div>
+<div id="t26_2" class="t s8_2">C, ARM, Cortex-M3, STMicroelectronics STM32 MCUs, IAR Embedded </div>
+<div id="t27_2" class="t s8_2">Workbench for ARM, Device drivers development </div>
+<div id="t28_2" class="t s7_2">Technologies (proprietary):</div>
+<div id="t29_2" class="t s8_2">I&amp;C systems engineering technology in area of railway </div>
+<div id="t2a_2" class="t s8_2">transportation </div>
+
+<!-- End text definitions -->
+
+
+<!-- Begin Form Data -->
+<form>
+<input type="button"  tabindex="1"  id="form2_1" name="36 0 R"  pdfFieldName="36 0 R" onclick="window.location.href='mailto:ivan.starodubtsev.name@gmail.com';" style="cursor:pointer;" title="mailto:ivan.starodubtsev.name@gmail.com" />
+
+</form>
+<!-- End Form Data -->
+<!-- Begin page background -->
+<div id="pg2Overlay" style="width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0); -webkit-user-select: none;"></div>
+<div id="pg2"><object width="935" height="1210" data="2/2.svg" type="image/svg+xml" id="pdf2" style="width:935px; height:1210px; background-color:white; -moz-transform:scale(1); z-index: 0;"></object></div>
+<!-- End page background -->
+
+<!-- Begin page loading JS -->
+<script id="ld2" type="text/javascript">
+
+var isIE = false;
+var f2 = [['t1_2',372],['t2_2',499],['t3_2',235],['t4_2',643],['t8_2',944],['tb_2',2049],['td_2',574],['tf_2',514],['tg_2',451],['th_2',1573],['tj_2',1935],['tk_2',2510],['tl_2',2238],['tm_2',562],['tn_2',1844],['to_2',2510],['tp_2',2510],['tq_2',621],['tr_2',605],['tu_2',1612],['tw_2',756],['ty_2',514],['tz_2',451],['t10_2',816],['t12_2',1996],['t13_2',2358],['t15_2',562],['t16_2',1814],['t18_2',621],['t19_2',937],['t1c_2',2049],['t1e_2',877],['t1g_2',514],['t1h_2',451],['t1i_2',2087],['t1k_2',1935],['t1l_2',1633],['t1m_2',562],['t1n_2',1935],['t1o_2',1391],['t1p_2',621],['t1q_2',605],['t1t_2',2452],['t1v_2',756],['t1x_2',514],['t1y_2',451],['t1z_2',1905],['t20_2',2480],['t21_2',877],['t23_2',2087],['t24_2',1633],['t25_2',562],['t26_2',1874],['t27_2',1361],['t28_2',621],['t29_2',1602]];
+function load2(){
+	var timeout = 100;
+	if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) timeout = 500;
+	setTimeout(function() {adjustWordSpacing(f2);},timeout);
+}
+</script>
+<!--[if lt IE 9]><script type="text/javascript">
+isIE = true;
+
+var divCount = 83;
+for (var i = 1; i < divCount; i++) {
+    var div = document.getElementById("t" + i.toString(36) + "_2");
+    if (div !== null) {
+        div.style.top = (div.offsetTop * 4) + "px";
+        div.style.left = (div.offsetLeft * 4) + "px";
+        div.style.zoom = "25%";
+    }
+}
+</script><![endif]-->
+<!-- End page loading JS -->
+
+</div>
+</body>
+</html>
